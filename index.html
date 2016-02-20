@@ -1,0 +1,130 @@
+<!DOCTYPE HTML-->
+<html>
+<head>
+<link rel="stylesheet" href="css/jquery.mobile.structure-1.4.5.css"  />
+<link rel="stylesheet" href="css/jquery.mobile.theme-1.4.5.css" />
+<link rel="stylesheet" href="css/jquery.mobile-1.4.5.css" />
+<script type="text/javascript" src="js/jquery-2.2.0.min.js"></script>
+<script type="text/javascript" src="js/jquery.mobile-1.4.5.min.js"></script>
+
+<style type="text/css">
+    #encabezado{
+        
+       text-align: center;
+       font-size:15px;
+       color:red;
+       font-weight: bold;
+       
+    }
+    #botones{
+        
+       text-align: center;
+       font-size:30px;
+       color:red;
+       font-weight: lighter;
+       background-color: greenyellow;
+       
+       
+    }
+</style>
+    
+<!--<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>-->
+
+<script type="text/javascript">
+    
+    $("document").ready(function inicio(){
+        $("#ORAcendente").tap(function(){
+			var datos=$("#txtnum0").val();
+                        var arreglo=datos.split(" ");
+                        var i=0;
+                        var arregloInt=[];
+                      
+                        
+                            for(i;i<arreglo.length;i++){
+                                arregloInt[i]=parseInt(arreglo[i]);
+                                
+                            }
+                            
+                            var y=0;
+                            var z=0;
+                            var aux=0;
+                            
+                                for(z;z<=arregloInt.length;z++){
+                                    for(y;y<arregloInt.length;y++){
+                                        if(arregloInt[y]<arregloInt[y+1]){
+                                            aux=arregloInt[y];
+                                            arregloInt[y]=arregloInt[y+1]
+                                            arregloInt[y+1]=aux;
+                                            }  
+                                             
+                                            }
+                                            y=0;
+                                    }
+                                    var j=0;
+                                    var cadena="";
+                                    for(j;j<arregloInt.length;j++){
+                                        cadena=cadena+ " "+ arregloInt[j];
+                                                                
+                                }
+                                var result=$("#txtOr");
+                                result.val(cadena);
+		
+        
+	
+    });
+    
+      
+    });    
+
+</script>
+</head>
+<body>
+
+<div data-role="page" id="principal" style="background-image:url(rel.jpg) ">
+    <div data-role="header">                 
+        <h1  id="encabezado" >programacion logica y funcional</h1>
+             </div>
+              <div data-role="content">
+<p id="encabezado">Orden</p>
+<a id="boton1" href="#OAcendente" data-role="button" data-transition="slidefade" >ordenar decendente </a>
+
+</div>
+        
+    
+<div data-role="footer">
+<p>Ordena tus numeros</p>
+<p>PROGRAMA HECHO POR ANDRES VAZQUEZ GARCIA</p>
+               </div>
+</div>
+
+<div data-role="page" id="OAcendente" style="background-image:url(rel.jpg) " >
+             <div data-role="header">
+     <h1>ordenar numeros</h1>
+             </div>
+              <div data-role="content">
+                    <input type="text"  id="txtnum0" placeholder="espacio entre cada numero"/>
+                    <input type="text"  id="txtOr" placeholder="datos odenados"/>
+                    <input type="button"  id="ORAcendente" value="Ordenar Decendente "/>
+              </div>
+              <div data-role="footer">
+<p>ordena ;)</p>
+               </div>
+</div>
+    
+    <div data-role="page" id="ODecendente" style="background-image:url(rel.jpg) " >
+             <div data-role="header">
+     <h1>ordenar numeros</h1>
+             </div>
+              <div data-role="content">
+                    <input type="text"  id="txtnum00" placeholder="espacio entre cada numero"/>
+                    <input type="text"  id="txtO" placeholder="datos odenados"/>
+                    <input type="button"  id="ORDecendente" value="Ordenar Acendente "/>
+              </div>
+              <div data-role="footer">
+<p>ordena ;)</p>
+               </div>
+</div>
+
+</html>
